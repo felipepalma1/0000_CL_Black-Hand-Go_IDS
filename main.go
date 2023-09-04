@@ -1,7 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"0000_CL_Black-Hand-Go_IDS/Configuration"
+)
 
 func main() {
-	fmt.Println("Black Hat Go")
+	activity := Configuration.Activity{ID: "03"}
+	Configuration.Selection(activity)
 }
