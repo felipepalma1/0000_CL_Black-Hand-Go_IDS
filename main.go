@@ -5,6 +5,6 @@ import (
 )
 
 func main() {
-	activity := Configuration.Activity{ID: "03"}
+	activity := Configuration.Activity{ID: "02"}
 	Configuration.Selection(activity)
 }
