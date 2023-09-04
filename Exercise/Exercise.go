@@ -6,8 +6,17 @@ import (
 )
 
 func E001() {
-	_, err := net.Dial("tcp", "vsrv.nino.tres.cl:3000")
-	if err == nil {
-		fmt.Println("Connection Successful")
+
+	for i := 1; i <= 10000; i++ {
+		address := fmt.Sprintf("vsrv.nino.tres.cl:%d", i)
+		connection, err := net.Dial("tcp", address)
+		if err != nil {
+			continue
+		}
+		err = connection.Close()
+		if err != nil {
+			return
+		}
+		fmt.Printf("%d Open\n", i)
 	}
 }
